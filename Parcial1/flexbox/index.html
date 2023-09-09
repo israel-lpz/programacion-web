@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contenedor {
+            height: 100vw;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .caja {
+            background-color: darkred;
+            border: 1px solid black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #caja1 {
+            flex-grow: 1;
+        }
+
+        #caja2 {
+            flex-grow: 2;
+            align-self: flex-end;
+        }
+
+        #caja3 {
+            flex-grow: 1;
+            align-self: flex-start;
+        }
+
+        #caja4 {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="caja" id="caja1">Caja 1</div>
+        <div class="caja" id="caja2">Caja 2</div>
+        <div class="caja" id="caja3">Caja 3</div>
+        <div class="caja" id="caja4">Caja 4</div>
+        <div class="caja" id="caja5">Caja 5</div>
+        <div class="caja" id="caja6">Caja 6</div>
+        <div class="caja" id="caja7">Caja 7</div>
+        <div class="caja" id="caja8">Caja 8</div>
+        <div class="caja" id="caja9">Caja 9</div>
+        <div class="caja" id="caja10">Caja 10</div>
+        <div class="caja" id="caja11">Caja 11</div>
+        <div class="caja" id="caja12">Caja 12</div>
+        <div class="caja" id="caja13">Caja 13</div>
+        <div class="caja" id="caja14">Caja 14</div>
+        <div class="caja" id="caja15">Caja 15</div>
+    </div>
+</body>
+</html>
