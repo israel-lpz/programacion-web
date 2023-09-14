@@ -26,20 +26,50 @@
             transition: all 1s;
         }
 
-        #caja1:hover {
-            /*transition: all 1s;*/
-            /*width: calc(100% / 3);*/
-            transform: scale(1.3);
-            margin-right: 40px;
-            margin-left: 40px;
+        @media screen and (max-width: 900px) {
+            .caja {
+                width: calc(100% / 4 - 30px);
+                background-color: #0d524f;
+            }
+
+            #caja3 {
+                clear: left;
+            }
+
+            #caja4 {
+                clear: left;
+            }
         }
 
-        #caja2:hover {
-            transform: translateY(50px);
+        @media screen and (max-width: 700px) {
+            .caja {
+                width: calc(100% / 3 - 30px);
+                background-color: rebeccapurple;
+                clear: unset !important;
+            }
         }
 
-        #caja3:hover {
-            transform: rotate3d(0, 1, 0, 3.142rad);
+        @media screen and (max-width: 500px) {
+            .caja {
+                width: calc(100% / 2 - 30px);
+                background-color: darkcyan;
+            }
+        }
+
+        @media screen and (max-width: 300px) {
+            .caja {
+                width: calc(100% / 1 - 30px);
+                background-color: darkorchid;
+            }
+        }
+
+        #caja1 {
+        }
+
+        #caja2 {
+        }
+
+        #caja3 {
         }
     </style>
 </head>
@@ -49,6 +79,8 @@
         <div class="caja" id="caja1">Caja 1</div>
         <div class="caja" id="caja2">Caja 2</div>
         <div class="caja" id="caja3">Caja 3</div>
+        <div class="caja" id="caja4">Caja 4</div>
+        <div class="caja" id="caja5">Caja 5</div>
     </div>
 </body>
 </html>
