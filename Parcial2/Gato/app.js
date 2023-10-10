@@ -7,17 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let gato = getInitialValue();
 
     const checarSiJugadorGano = (jugador) => {
-        // Verifica filas
         for (let i = 0; i < 3; i++) {
-            if (gato[i][0] === jugador && gato[i][1] === jugador && gato[i][2] === jugador) {
-                return true;
-            }
-        }
-        // Verifica columnas
-        for (let j = 0; j < 3; j++) {
-            if (gato[0][j] === jugador && gato[1][j] === jugador && gato[2][j] === jugador) {
-                return true;
-            }
+            // Verifica filas
+            if (gato[i].every(x => x === jugador)) return true;
+            // Columnas
+            if(gato.every(x => x[i] === jugador)) return true;
         }
         // Verifica diagonales
         if (gato[0][0] === jugador && gato[1][1] === jugador && gato[2][2] === jugador) {
@@ -43,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if(gato[row][col] !== 0) return;
 
-        gato[row][col] = +isUser1 + 1;
+        gato[row][col] = +!isUser1 + 1;
         isUser1 = !isUser1;
 
         celda.innerHTML = `<img src="img/${isUser1 ? 'User1' : 'User2'}.png" class="img-user pe-none" alt=""/>`;
