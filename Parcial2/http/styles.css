@@ -1,0 +1,14 @@
+.product-image {
+    width: 10rem;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.product {
+    width: 15rem;
+}
+
+.product-thumb {
+    width: 5rem;
+}
