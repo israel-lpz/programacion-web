@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <button type="button" id="btnPeticionExpress">Express</button>
+        <button type="button" id="btnPeticionNode">Node</button>
+    </form>
+    <script>
+        document.querySelector("#btnPeticionNode").addEventListener("click", async () => {
+            const response = await fetch("http://localhost:3000");
+            const data = await response.json();
+            console.log(JSON.stringify(data, null, 2));
+            // console.log(JSON.stringify(data, null, 2));
+        });
+        document.querySelector("#btnPeticionExpress").addEventListener("click", async () => {
+            const response = await fetch("http://localhost:5000/users");
+            const data = await response.json();
+            console.log(JSON.stringify(data, null, 2));
+        });
+    </script>
+</body>
+</html>

@@ -14,7 +14,7 @@ const conn = await createConnection({
     password: 'admin',
     port: 3306,
     database: 'school'
-})
+});
 
 app.get('/users', async (req, res) => {
     let where = '';
@@ -26,8 +26,8 @@ app.get('/users', async (req, res) => {
     if(results.length === 0){
         return res.json({message: 'No existe'})
     }
-    res.json(results[0]);
+    res.json(results);
 });
 
 
-app.listen(5000, () => console.log('Running server'));
+app.listen(3001, () => console.log('Running server on port: 3001'));
