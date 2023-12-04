@@ -9,54 +9,98 @@
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container pt-5">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/clients">Ver clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create_client">Crear cliente</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-3">
+        <h1 class="fs-2 pb-3">Ver usuario</h1>
         <form action="">
-            <div class="row">
+            <div class="row gy-3">
                 <div class="col-md-6">
                     <label>Apellido paterno</label>
-                    <input type="text" name="appaterno">
+                    <input type="text" name="appaterno" id="appaterno" class="form-control w-100">
                 </div>
                 <div class="col-md-6">
                     <label>Apellido materno</label>
-                    <input type="text" name="apmaterno">
+                    <input type="text" name="apmaterno" id="apmaterno" class="form-control w-100">
                 </div>
                 <div class="col-md-6">
                     <label>Nombre</label>
-                    <input type="text" name="nombre">
+                    <input type="text" name="nombre" id="nombre" class="form-control w-100">
                 </div>
                 <div class="col-md-6">
                     <label>Fecha de nacimiento</label>
-                    <input type="date" name="fechanac">
+                    <input type="date" name="fechanac" id="fechanac" class="form-control w-100">
                 </div>
                 <div class="col-md-6">
                     <label>Edad</label>
-                    <input type="number" name="edad">
+                    <input type="number" name="edad" id="edad" class="form-control w-100">
                 </div>
                 <div class="col-md-6">
                     <label>Genero</label>
-                    <select name="genero" id="" class="form-select">
-                        <option value="H">Hombre</option>
-                        <option value="M">Mujer</option>
+                    <select name="genero" id="genero" class="form-select w-100">
+                        <option value="M">Hombre</option>
+                        <option value="F">Mujer</option>
                     </select>
                 </div>
                 <div class="col-md-6">
                     <label>Domicilio</label>
-                    <input type="text" name="domicilio">
+                    <input type="text" name="domicilio" id="domicilio" class="form-control w-100">
                 </div>
                 <div class="col-md-6">
                     <label>Telefono</label>
-                    <input type="tel" name="telefono">
+                    <input type="tel" name="telefono" id="telefono" class="form-control w-100">
                 </div>
                 <div class="col-md-6">
                     <label>Correo electronico</label>
-                    <input type="text" name="email">
+                    <input type="text" name="email" id="email" class="form-control w-100">
+                </div>
+                <div class="col-md-12">
+                    <a class="btn btn-primary" href="#" id="btnCrear">Crear</a>
+                    <a class="btn btn-primary" href="/clients">Ver todos los clientes</a>
                 </div>
             </div>
         </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', async () => {
+            document.getElementById('btnCrear').addEventListener('click', async (e) => {
+                e.preventDefault();
+                const data = {
+                    appaterno: document.getElementById('appaterno').value,
+                    apmaterno: document.getElementById('apmaterno').value,
+                    nombre: document.getElementById('nombre').value,
+                    fechanac: document.getElementById('fechanac').value,
+                    edad: document.getElementById('edad').value,
+                    genero: document.getElementById('genero').value,
+                    domicilio: document.getElementById('domicilio').value,
+                    telefono: document.getElementById('telefono').value,
+                    email: document.getElementById('email').value,
+                };
+                await axios.post(`/clients`, data);
+                window.location.href = '/clients';
+            });
+        });
     </script>
 </body>
 </html>

@@ -7,8 +7,10 @@ import clientsController from "./controllers/clients.controller.js";
 
 const app = express();
 
-app.use(clientsController);
 app.use(express.json());
+// app.use(express.urlencoded({extended: true}));
+
+app.use(clientsController);
 app.use(cors());
 app.use(morgan('dev'));
 app.use('/public', express.static(join(dirname(fileURLToPath(import.meta.url)), 'public')));
